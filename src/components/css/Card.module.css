@@ -1,0 +1,43 @@
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+  line-height: 1.75rem;
+}
+
+.cardContent {
+  color: #6b7280;
+  line-height: 1.625;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #1f2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .cardTitle {
+    color: #f9fafb;
+  }
+
+  .cardContent {
+    color: #d1d5db;
+  }
+}

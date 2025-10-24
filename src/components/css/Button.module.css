@@ -1,0 +1,54 @@
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.secondary {
+  background-color: #4b5563;
+  color: white;
+}
+
+.secondary:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(75, 85, 99, 0.4);
+}
+
+.danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.danger:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+.button:active {
+  transform: translateY(0);
+}

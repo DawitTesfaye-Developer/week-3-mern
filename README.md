@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# MERN Frontend App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application built with TypeScript, Vite, and Tailwind CSS. This project demonstrates a responsive single-page application with task management, API data fetching, and theme switching capabilities.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Task Management**: Add, complete, delete, and filter tasks with local storage persistence
+- **API Integration**: Fetch and display data from JSONPlaceholder with search and pagination
+- **Responsive Design**: Mobile-first design using Tailwind CSS
+- **Theme Switching**: Dark and light mode support with context-based state management
+- **Component Library**: Reusable UI components (Button, Card, Navbar, Footer)
+- **TypeScript**: Full type safety throughout the application
+- **Routing**: Client-side routing with React Router DOM
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: React Context API
+- **Hooks**: Custom hooks for local storage and theme management
+- **Linting**: ESLint with TypeScript support
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/mern-frontend.git
+   cd mern-frontend
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Usage
+
+### Navigation
+- **Home (/)**: User profile page
+- **Tasks (/tasks)**: Task management interface
+- **API (/api)**: Data fetching from external API
+
+### Task Manager
+- Add new tasks
+- Mark tasks as complete
+- Delete tasks
+- Filter tasks by status
+- Data persists in local storage
+
+### API Data Page
+- Fetch posts from JSONPlaceholder
+- Search through posts
+- Pagination support
+
+### Theme Switching
+- Toggle between light and dark themes using the navbar switch
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Button.tsx
+│   ├── Card.tsx
+│   ├── Footer.tsx
+│   ├── Layout.tsx
+│   ├── Navbar.tsx
+│   ├── profile.tsx
+│   └── css/             # Component-specific styles
+├── contexts/            # React contexts
+│   └── ThemeContext.tsx
+├── hooks/               # Custom hooks
+│   └── useLocalStorage.ts
+├── pages/               # Page components
+│   ├── ApiData.tsx
+│   └── TaskManager.tsx
+├── utils/               # Utility functions
+├── App.tsx              # Main app component
+├── main.tsx             # App entry point
+└── index.css            # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
